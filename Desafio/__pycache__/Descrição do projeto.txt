@@ -1,0 +1,51 @@
+Descrição do Projeto
+
+
+
+Este projeto contém uma série de scripts Python e seus respectivos testes. Abaixo, você encontrará uma descrição do que cada arquivo faz, como executar os testes e como gerar relatórios de cobertura HTML.
+
+Estrutura dos Arquivos
+Scripts Python
+conta_letras.py: Contém a função contar_as que conta o número de ocorrências da letra 'a' em um texto, seja fornecido diretamente ou a partir de um arquivo.
+fibonacci.py: Implementa funções relacionadas à sequência de Fibonacci.
+interruptores.py: Contém funções para manipulação e verificação de estados de interruptores.
+sequencias.py: Implementa funções para geração e manipulação de sequências numéricas.
+soma.py: Contém funções para realizar operações de soma, incluindo tratamento de limites e tipos de entrada.
+Testes
+test_all.py: Script que executa todos os testes dos módulos.
+test_conta_letras.py: Testa a função contar_as no módulo conta_letras.py.
+test_fibonacci.py: Testa as funções do módulo fibonacci.py.
+test_interruptores.py: Testa as funções do módulo interruptores.py.
+test_sequencias.py: Testa as funções do módulo sequencias.py.
+test_soma.py: Testa as funções do módulo soma.py.
+Diretórios de Cache e Relatórios
+pycache: Contém arquivos de bytecode compilados dos módulos Python.
+htmlcov: Diretório que contém os arquivos gerados pelo relatório de cobertura de testes em HTML.
+Como Realizar os Testes
+Instale as dependências: Certifique-se de que todas as dependências necessárias estão instaladas. Se estiver usando pytest para testes, você pode instalar com o seguinte comando:
+
+bash
+
+pip install pytest pytest-cov
+Execute os testes: Para executar todos os testes, use o seguinte comando:
+
+bash
+
+pytest
+Isso executará todos os testes e exibirá um resumo do status dos testes.
+
+Como Gerar o Relatório HTML de Cobertura
+Execute os testes com cobertura: Para gerar um relatório de cobertura de testes em HTML, execute o seguinte comando:
+
+bash
+
+pytest --cov=. --cov-report=html
+--cov=.: Informa ao pytest para medir a cobertura de código para o pacote atual.
+--cov-report=html: Gera um relatório de cobertura em formato HTML e o salva no diretório htmlcov.
+Visualize o relatório: Após a execução do comando, abra o arquivo index.html no diretório htmlcov em um navegador para visualizar o relatório de cobertura.
+
+bash
+
+xdg-open htmlcov/index.html  # Para sistemas Linux
+open htmlcov/index.html      # Para sistemas macOS
+start htmlcov/index.html     # Para sistemas Windows
