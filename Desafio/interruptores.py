@@ -1,18 +1,23 @@
-def is_interruptor(estado):
-    """Verifica o estado do interruptor e retorna a string correspondente.
-    
+def obter_estado_lampada(pergunta):
+    """Obtém o estado de uma lâmpada a partir da resposta do usuário.
+
     Args:
-        estado: Pode ser True (ligado), False (desligado) ou None/qualquer outro valor inválido.
-    
+        pergunta (str): A pergunta a ser feita ao usuário.
+
     Returns:
-        Uma string representando o estado do interruptor.
-    
+        bool: True se a lâmpada estiver acesa, False caso contrário.
+
     Raises:
-        ValueError: Se o estado for inválido.
+        ValueError: Se a resposta do usuário for inválida.
     """
-    if estado is True:
-        return "Ligado"
-    elif estado is False:
-        return "Desligado"
-    else:
-        raise ValueError("Estado inválido")
+    while True:
+        try:
+            resposta = input(pergunta).lower()
+            if resposta == 'sim':
+                return True
+            elif resposta == 'não':
+                return False
+            else:
+                raise ValueError("Resposta inválida. Por favor, digite 'sim' ou 'não'.")
+        except ValueError as e:
+            print(e)
